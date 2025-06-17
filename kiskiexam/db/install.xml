@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/kiskiexam/db" VERSION="2025061400" COMMENT="Install XML for KiskiExam plugin"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../../lib/xmldb/xmldb.xsd">
+
+    <TABLES>
+        <TABLE NAME="local_kiskiexam_data" COMMENT="Konfigurasi khusus kuis untuk plugin KiskiExam">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="quizid" TYPE="int" LENGTH="10" NOTNULL="true"/>
+                <FIELD NAME="enable" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0"/>
+                <FIELD NAME="password" TYPE="char" LENGTH="255" NOTNULL="false"/>
+                <FIELD NAME="showbattery" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0"/>
+                <FIELD NAME="showwifi" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <KEY NAME="quizid_unique" TYPE="unique" FIELDS="quizid"/>
+            </KEYS>
+        </TABLE>
+    </TABLES>
+</XMLDB>
